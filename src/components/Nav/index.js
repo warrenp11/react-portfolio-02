@@ -16,12 +16,12 @@ function Nav() {
   return (
     <header>
       <h1>
-        <a href="/">Hi, my name is Peter!</a>
+        <a data-testid="link" href="/">Hi, my name is Peter!</a>
       </h1>
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a href="#about">About me</a>
+            <a data-testid="about" href="#about">About me</a>
           </li>
           <li>
             <span>Contact</span>
