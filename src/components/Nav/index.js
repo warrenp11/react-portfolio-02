@@ -1,13 +1,8 @@
 import React from "react";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
-function Nav() {
-  const categories = [
-    {
-      name: "portfolio",
-      description: "Links to projects I've created as a web developer",
-    },
-    { name: "resume", description: "My professional resume" },
-  ];
+function Nav(props) {
+  const { categories = [], setCurrentCategory, currentCategory } = props;
 
   function categorySelected(name) {
     console.log(`${name} clicked`);
@@ -16,19 +11,34 @@ function Nav() {
   return (
     <header>
       <h1>
-        <a data-testid="link" href="/">Hi, my name is Peter!</a>
+        <a data-testid="link" href="/">
+          Hi, my name is Peter!
+        </a>
       </h1>
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a data-testid="about" href="#about">About me</a>
+            <a data-testid="about" href="#about">
+              About Me
+            </a>
           </li>
           <li>
             <span>Contact</span>
           </li>
           {categories.map((category) => (
-            <li className="mx-1" key={category.name}>
-              <span onClick={() => categorySelected(category.name)} >{category.name}</span>
+            <li
+              className={`mx-1 ${
+                currentCategory.name === category.name && "navActive"
+              }`}
+              key={category.name}
+            >
+              <span
+                onClick={() => {
+                  setCurrentCategory(category);
+                }}
+              >
+                {capitalizeFirstLetter(category.name)}
+              </span>
             </li>
           ))}
         </ul>
