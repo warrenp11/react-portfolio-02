@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery is rendering matches snapshot 1`] = `
+<DocumentFragment>
+  <section>
+    <h1
+      data-testid="h1tag"
+    >
+      Projects
+    </h1>
+    <p>
+      Just a few of the projects I've created as a web developer
+    </p>
+    <div>
+      <div
+        class="flex-row"
+      >
+        <img
+          alt="Coding Knowledge Quiz"
+          class="img-thumbnail mx-1"
+          src="0.jpg"
+        />
+        <img
+          alt="Health Tracker App"
+          class="img-thumbnail mx-1"
+          src="1.jpg"
+        />
+        <img
+          alt="Password Generator"
+          class="img-thumbnail mx-1"
+          src="2.jpg"
+        />
+        <img
+          alt="Kayne West vs. Ron Swanson: Random Quote Generator"
+          class="img-thumbnail mx-1"
+          src="3.jpg"
+        />
+        <img
+          alt="Work Day Scheduler"
+          class="img-thumbnail mx-1"
+          src="4.jpg"
+        />
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

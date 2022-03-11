@@ -3,15 +3,29 @@ import { render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Nav from "..";
 
+const categories = [
+  { name: "projects", description: "Just a few of the projects I've created as a web developer" }
+];
+const mockCurrentCategory = jest.fn();
+const mockSetCurrentCategory = jest.fn();
+
 afterEach(cleanup);
 
 describe("Nav component", () => {
   it("renders", () => {
-    render(<Nav />);
+    render(<Nav
+    categories={categories}
+    setCurrentCategory={mockSetCurrentCategory}
+    currentCategory={mockCurrentCategory}
+  />);
   });
 
   it("matches snapshot", () => {
-    const { asFragment } = render(<Nav />);
+    const { asFragment } = render(<Nav
+    categories={categories}
+    setCurrentCategory={mockSetCurrentCategory}
+    currentCategory={mockCurrentCategory}
+  />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
@@ -20,9 +34,13 @@ describe("Nav component", () => {
 describe("links are visible", () => {
   it("inserts text into the links", () => {
     // Arrange
-    const { getByTestId } = render(<Nav />);
+    const { getByTestId } = render(<Nav
+    categories={categories}
+    setCurrentCategory={mockSetCurrentCategory}
+    currentCategory={mockCurrentCategory}
+  />);
     // Assert
     expect(getByTestId("link")).toHaveTextContent("Hi, my name is Peter!");
-    expect(getByTestId("about")).toHaveTextContent("About me");
+    expect(getByTestId("about")).toHaveTextContent("About Me");
   });
 });
