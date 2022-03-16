@@ -43,6 +43,8 @@ function ContactForm() {
   return (
     <section>
       <h1 data-testid="h1tag">Contact Me</h1>
+      <p>This contact form is for front-end use only, I will not receive any attempts to contact me through this form.</p>
+      <p>If you'd like to reach me, please email me at peterbenjaminwarren@gmail.com</p>
       <form id="contact-form" onSubmit={handleSubmit}>
         {/* name input */}
         <div>
