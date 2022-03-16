@@ -34,7 +34,7 @@ const PhotoList = ({ category }) => {
       name: "Work Day Scheduler",
       category: "projects",
       description:
-        "Ever wondered who the greatest philosopher of our time is? Wonder no more! Generate a random quote by Kanye West and Ron Swanson, then choose who wins! This project was built as part of a group project using HTML, CSS and Foundation, JavaScript, and uses third-party APIs. Visit the GitHub repo at https://github.com/JBGinger/Group1.Module7Project",
+        "Ever wondered who the greatest philosopher of our time is? Wonder no more! Generate a random quote by Kanye West and Ron Swanson, then choose who wins! This project was built as part of a group project using HTML, CSS and Foundation, JavaScript, and uses third-party APIs. Visit the GitHub repo at https://github.com/warrenp11/work-day-scheduler",
     },
   ]);
 
@@ -43,7 +43,7 @@ const PhotoList = ({ category }) => {
   const toggleModal = (image, i) => {
     // current photo
     setCurrentPhoto({...image, index: i})
-    setIsModalOpen(true);
+    setIsModalOpen(!isModalOpen);
   }
 
   return (
